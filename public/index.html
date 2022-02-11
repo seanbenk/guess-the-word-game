@@ -8,31 +8,37 @@
     <h1>Welcome</h1>
     <p>
       Random word game api is a generator and verifier for a certain type of
-      popular word game that we can't mention here
+      popular word game that we can't mention here. 😁
     </p>
-    <table>
-      <tr>
-        <th>route</th>
-        <th>parameters</th>
-        <th>response</th>
-      </tr>
-      <tr>
-        <td>[GET] https://random-word-game-host.herokuapp.com/word</td>
-        <td>none</td>
-        <td>
-          { wordCode: 123 } A word code that can be used within your future
-          comparisons
-        </td>
-      </tr>
-      <tr>
-        <td>[POST] https://random-word-game-host.herokuapp.com/word/compare</td>
-        <td><b>Body:</b>{wordCode: 123, guess: 'cakes'}</td>
-        <td>
-          { colors: ["green", "yellow", "grey", "grey", "yellow"] } An array
-          with colors corresponding to the position of the letters in the guess
-          word to the secret word
-        </td>
-      </tr>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Route</th>
+          <th>Parameters in body</th>
+          <th>Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[GET]<br />https://random-word-game-host.herokuapp.com/word</td>
+          <td>none</td>
+          <td>
+            { wordCode: 123 }<br />A word code that can be used within your
+            future comparisons
+          </td>
+        </tr>
+        <tr>
+          <td>
+            [POST]<br />https://random-word-game-host.herokuapp.com/word/compare
+          </td>
+          <td>{ wordCode: 123, guess: 'cakes' }</td>
+          <td>
+            { colors: ["green", "yellow", "grey", "grey", "yellow"] }<br />An
+            array with colors corresponding to the position of the letters in
+            the guess word to the secret word
+          </td>
+        </tr>
+      </tbody>
     </table>
   </body>
 </html>
