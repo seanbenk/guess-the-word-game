@@ -13,8 +13,6 @@ router.get("/", (req, res, next) => {
 router.post("/compare", (req, res, next) => {
   const { wordCode, guess } = req.body;
   const secretWord = words[wordCode];
-  console.log("word: ", secretWord);
-  console.log("guess: ", guess);
   if (words.includes(guess)) {
     res.send({
       valid: true,
@@ -22,7 +20,11 @@ router.post("/compare", (req, res, next) => {
       colors: compareGuess(secretWord, guess),
     });
   }
-  res.send({ valid: false });
+  res.send({
+    valid: false,
+    wordCode: wordCode ? wordCode : "word code doesn't exist",
+    guess: guess ? guess : "guess doesn't exist",
+  });
 });
 
 const compareGuess = (secretWord, guess) =>
