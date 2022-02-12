@@ -16,13 +16,14 @@ const wordsRouter = require("./routes/words");
 
 const app = express();
 
+app.set("views", "./views");
+app.set("view engine", "ejs");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, "public")));
-app.set("view engine", "ejs");
 
 app.use("/", indexRouter);
 app.use("/game", gameRouter);
