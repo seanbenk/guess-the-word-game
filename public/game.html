@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/game.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+  </head>
+  <body>
+    <header><h1>Wordle</h1></header>
+    <div class="board">
+      <div class="board-row available">
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+      </div>
+      <div class="board-row available">
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+      </div>
+      <div class="board-row available">
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+      </div>
+      <div class="board-row available">
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+      </div>
+      <div class="board-row available">
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+      </div>
+      <div class="board-row available">
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+        <div class="input-box"></div>
+      </div>
+      <span id="error-message"></span>
+    </div>
+    <div class="keyboard">
+      <div class="keyboard-row">
+        <button data-key-letter="q">q</button>
+        <button data-key-letter="w">w</button>
+        <button data-key-letter="e">e</button>
+        <button data-key-letter="r">r</button>
+        <button data-key-letter="t">t</button>
+        <button data-key-letter="y">y</button>
+        <button data-key-letter="u">u</button>
+        <button data-key-letter="i">i</button>
+        <button data-key-letter="o">o</button>
+        <button data-key-letter="p">p</button>
+      </div>
+      <div class="keyboard-row">
+        <button data-key-letter="a">a</button>
+        <button data-key-letter="s">s</button>
+        <button data-key-letter="d">d</button>
+        <button data-key-letter="f">f</button>
+        <button data-key-letter="g">g</button>
+        <button data-key-letter="h">h</button>
+        <button data-key-letter="j">j</button>
+        <button data-key-letter="k">k</button>
+        <button data-key-letter="l">l</button>
+      </div>
+      <div class="keyboard-row">
+        <button>enter</button>
+        <button data-key-letter="z">z</button>
+        <button data-key-letter="x">x</button>
+        <button data-key-letter="c">c</button>
+        <button data-key-letter="v">v</button>
+        <button data-key-letter="b">b</button>
+        <button data-key-letter="n">n</button>
+        <button data-key-letter="m">m</button>
+        <button>
+            <i class="fa fa-backspace"></i>
+        </button>
+      </div>
+      <div class="modal hidden">
+        <div class="inner-modal">
+          <h2 class="modal-text"></h2>
+        </div>
+      </div>
+      <script type="text/javascript" src="/javascripts/game.js"></script>
+  </body>
+</html>

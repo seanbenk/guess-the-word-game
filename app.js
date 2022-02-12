@@ -11,6 +11,7 @@ const corsOptions = {
 };
 
 const indexRouter = require("./routes/index");
+const gameRouter = require("./routes/game");
 const wordsRouter = require("./routes/words");
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+app.use("/game", gameRouter);
 app.use("/word", wordsRouter);
 
 module.exports = app;

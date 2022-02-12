@@ -1,0 +1,129 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(39, 38, 38);
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 4rem;
+  margin: 0;
+  color: rgb(214, 200, 5);
+}
+
+.board-row {
+  display: flex;
+}
+
+.input-box {
+  height: 2rem;
+  width: 2rem;
+  /* background-color: rgb(156, 156, 156); */
+  margin: 2px;
+  margin-bottom: 5px;
+  border: 2px solid rgb(156, 156, 156);
+  border-radius: 3px;
+  color: rgb(156, 156, 156);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: grid;
+  place-content: center;
+}
+#error-message {
+  color: red;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+}
+
+.keyboard .keyboard-row button {
+  font-family: "Courier New", Courier, monospace;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 2px;
+  margin: 1px;
+}
+
+.grey {
+  color: rgb(39, 38, 38);
+  background-color: grey;
+  animation: forwards flip 1s;
+}
+
+.yellow {
+  color: rgb(39, 38, 38);
+  background-color: gold;
+  animation: forwards flip 1s;
+}
+
+.green {
+  color: rgb(39, 38, 38);
+  background-color: lime;
+  animation: forwards flip 1s;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+}
+
+.inner-modal {
+  height: 80%;
+  width: 80%;
+  background: rgb(39, 38, 38);
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+}
+
+.modal-text {
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  text-align: center;
+  margin: 2rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+    background: none;
+  }
+  50% {
+    transform: rotateX(90deg);
+    background: none;
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
