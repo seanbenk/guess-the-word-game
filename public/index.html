@@ -33,11 +33,24 @@
           <td>
             [GET]<br />https://random-word-game-host.herokuapp.com/word/compare
           </td>
-          <td>{ wordCode: 123, guess: 'cakes' }</td>
           <td>
-            { colors: ["green", "yellow", "grey", "grey", "yellow"] }<br />An
-            array with colors corresponding to the position of the letters in
+            { valid: true, colors: ["green", "yellow", "grey", "grey",
+            "yellow"], wordCode: 123, guess: 'cakes' }
+          </td>
+          <td>
+            An array with colors corresponding to the position of the letters in
             the guess word to the secret word
+          </td>
+          <td>
+            [GET]<br />https://random-word-game-host.herokuapp.com/word/dev/compare
+          </td>
+          <td>
+            { valid: true, wordCode: 123, guess: 'cakes', secretWord: 'hello' }
+          </td>
+          <td>
+            { colors: ["green", "yellow", "grey", "grey", "yellow"] }<br />The
+            same as /word/compare route, except the secret word is included
+            inside the body also
           </td>
         </tr>
       </tbody>
