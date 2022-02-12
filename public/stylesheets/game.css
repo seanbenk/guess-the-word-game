@@ -129,7 +129,7 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 848px) {
+@media only screen and (max-width: 1024px) {
   .input-box {
     min-height: 8vh;
     min-width: 8vw;
