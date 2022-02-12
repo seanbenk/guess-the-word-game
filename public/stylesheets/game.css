@@ -27,8 +27,8 @@ h1 {
 }
 
 .input-box {
-  height: 2rem;
-  width: 2rem;
+  height: 3vw;
+  width: 3vw;
   /* background-color: rgb(156, 156, 156); */
   margin: 2px;
   margin-bottom: 5px;
@@ -57,7 +57,8 @@ h1 {
 
 .keyboard .keyboard-row button {
   font-family: "Courier New", Courier, monospace;
-  height: 2rem;
+  height: 3vw;
+  min-width: 2vw;
   display: grid;
   place-items: center;
   border: none;
