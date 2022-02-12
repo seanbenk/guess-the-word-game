@@ -66,6 +66,10 @@ h1 {
   margin: 1px;
 }
 
+.keyboard .keyboard-row button:hover {
+  cursor: pointer;
+}
+
 .grey {
   color: rgb(39, 38, 38);
   background-color: grey;
@@ -113,6 +117,10 @@ h1 {
 
 .hidden {
   visibility: hidden;
+}
+
+.fa.fa-backspace {
+  pointer-events: none;
 }
 
 @keyframes flip {

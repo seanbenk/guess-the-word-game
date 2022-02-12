@@ -7,10 +7,12 @@ const baseUrl = "https://random-word-game-host.herokuapp.com/";
 ////////////////////////////////////////////////////////////////
 const addLetter = (letter) => {
   if (guess.length < 5) guess.push(letter.toLowerCase());
+  updateRow();
 };
 
 const removeLetter = () => {
   guess.pop();
+  updateRow();
 };
 
 const updateRow = () => {
@@ -35,15 +37,17 @@ const keydown = (e) => {
   const { key } = e;
   if (alphabet.includes(key.toLowerCase())) {
     addLetter(key);
-    updateRow();
   }
   if (key === "Backspace") {
     removeLetter();
-    updateRow();
   }
   if (key === "Enter") {
     compareWord();
   }
+};
+
+const onPress = (attr) => {
+  keydown({ key: attr });
 };
 
 const compareWord = () => {
@@ -74,7 +78,7 @@ const updateBoard = (colors) => {
       const color = colors[idx];
       box.classList.add(color);
       document
-        .querySelector(`[data-key-letter='${guessCp[idx]}']`)
+        .querySelector(`[data-letter='${guessCp[idx]}']`)
         .classList.add(color);
     }, 500 * idx);
   });
@@ -123,6 +127,14 @@ window.onload = () => {
   setNewWord();
 };
 
+document.querySelectorAll(".keyboard-letter").forEach((key) => {
+  key.addEventListener("mousedown", () => onPress(key.dataset.letter));
+});
+
+document.querySelector(".enter-btn").addEventListener("mousedown", compareWord);
+document
+  .querySelector(".backspace-btn")
+  .addEventListener("mousedown", removeLetter);
 // Utilities
 ////////////////////////////////////////////////////////////////
 
