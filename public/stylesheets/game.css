@@ -137,7 +137,7 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (device-width: 428px) and (device-height: 926) and (-webkit-device-pixel-ratio: 3) {
   .input-box {
     min-height: 8vh;
     min-width: 8vw;
