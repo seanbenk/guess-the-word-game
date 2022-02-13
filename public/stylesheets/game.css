@@ -15,9 +15,20 @@ body {
   background-color: rgb(39, 38, 38);
 }
 
+header {
+  text-align: center;
+}
+
 h1 {
   font-family: "Courier New", Courier, monospace;
   font-size: 4rem;
+  margin: 0;
+  color: rgb(214, 200, 5);
+}
+
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
   margin: 0;
   color: rgb(214, 200, 5);
 }

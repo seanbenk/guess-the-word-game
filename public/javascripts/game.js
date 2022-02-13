@@ -3,7 +3,7 @@ let wordCode;
 let guessCount = 0;
 const baseUrl = "https://random-word-game-host.herokuapp.com/";
 
-// Helper Functions Below
+// Helper Functions
 ////////////////////////////////////////////////////////////////
 const addLetter = (letter) => {
   if (guess.length < 5) guess.push(letter.toLowerCase());
@@ -135,6 +135,7 @@ document.querySelector(".enter-btn").addEventListener("mousedown", compareWord);
 document
   .querySelector(".backspace-btn")
   .addEventListener("mousedown", removeLetter);
+
 // Utilities
 ////////////////////////////////////////////////////////////////
 

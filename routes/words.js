@@ -4,12 +4,13 @@ const words = require("../words.js");
 
 const _ = require("lodash");
 
+// Sends a random word code
 router.get("/", (req, res, next) => {
   const wordCode = Math.floor(Math.random() * 5757);
-  console.log(`the word is: ${words[wordCode]}`);
   return res.send({ wordCode });
 });
 
+// Sends a color array
 router.get("/compare", (req, res, next) => {
   const { wordCode, guess, showWord } = req.query;
   const secretWord = words[wordCode];
@@ -25,6 +26,7 @@ router.get("/compare", (req, res, next) => {
   });
 });
 
+// Sends a color array and the secret word
 router.get("/dev/compare", (req, res, next) => {
   const { wordCode, guess, showWord } = req.query;
   const secretWord = words[wordCode];
@@ -41,6 +43,7 @@ router.get("/dev/compare", (req, res, next) => {
   });
 });
 
+// Sends the secret word
 router.get("/show", (req, res, next) => {
   const { wordCode } = req.query;
   const secretWord = words[wordCode];
@@ -55,7 +58,9 @@ router.get("/show", (req, res, next) => {
   });
 });
 
+// Helper functions
 function generateColorArr(secretWord, guess) {
+  // Set all tiles to initially be grey
   const colorArr = ["grey", "grey", "grey", "grey", "grey"];
   const guessLetterCount = {};
   const secretLetterCount = getLetterCount(secretWord);
