@@ -31,8 +31,8 @@ router.get("/dev/compare", (req, res, next) => {
   if (words.includes(guess)) {
     return res.send({
       valid: true,
-      secretWord,
       guess,
+      secretWord,
       colors: generateColorArr(secretWord, guess),
     });
   }

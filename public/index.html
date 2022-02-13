@@ -22,46 +22,55 @@
       </thead>
       <tbody>
         <tr>
-          <td>[GET]<br />https://random-word-game-host.herokuapp.com/word</td>
+          <td>
+            <b>[GET]</b
+            ><br /><br />https://random-word-game-host.herokuapp.com/word
+          </td>
           <td>none</td>
           <td>
-            { wordCode: 123 }<br />A word code that can be used within your
-            future comparisons
+            <b>{ wordCode: 123 }</b><br /><br />A word code that can be used
+            within your future comparisons
           </td>
         </tr>
         <tr>
           <td>
-            [GET]<br />https://random-word-game-host.herokuapp.com/word/compare
+            <b>[GET]</b
+            ><br /><br />https://random-word-game-host.herokuapp.com/word/compare
           </td>
-          <td>?wordCode=599&guess=cakes</td>
+          <td>?wordCode=663&guess=crane</td>
           <td>
-            { valid: true, colors: ["green", "yellow", "grey", "grey",
-            "yellow"], guess: 'cakes' }<br />
+            <b
+              >{ valid: true, guess: 'crane', colors: [ "green", "grey",
+              "yellow", "grey", "yellow"] }</b
+            ><br /><br />
             An array with colors corresponding to the position of the letters in
             the guess word to the secret word
           </td>
         </tr>
         <tr>
           <td>
-            [GET]<br />https://random-word-game-host.herokuapp.com/word/dev/compare
+            <b>[GET]</b
+            ><br /><br />https://random-word-game-host.herokuapp.com/word/dev/compare
           </td>
-          <td>?wordCode=599&guess=cakes</td>
+          <td>?wordCode=663&guess=crane</td>
           <td>
-            { valid: true, colors: ["green", "yellow", "grey", "grey",
-            "yellow"], guess: 'cakes', secretWord: 'hello' }<br />
+            <b
+              >{ valid: true, guess: 'crane', secretWord: 'cakes', colors:
+              ["green", "grey", "yellow", "grey", "yellow"] }</b
+            ><br /><br />
             The same as /word/compare route, except the secret word is included
-            inside the body also
+            inside the body
           </td>
         </tr>
         <tr>
           <td>
-            [GET]<br />https://random-word-game-host.herokuapp.com/word/show
+            <b>[GET]</b
+            ><br /><br />https://random-word-game-host.herokuapp.com/word/show
           </td>
           <td>?wordCode=663</td>
           <td>
-            { valid: true, secretWord: 'cakes' }<br />
-            The same as /word/compare route, except the secret word is included
-            inside the body also
+            <b>{ valid: true, secretWord: 'cakes' }</b><br /><br />
+            Reveals the word related to a code
           </td>
         </tr>
       </tbody>
