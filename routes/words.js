@@ -17,7 +17,7 @@ router.get("/compare", (req, res, next) => {
     return res.send({
       valid: true,
       guess,
-      colors: compareGuess(secretWord, guess),
+      colors: generateColorArr(secretWord, guess),
     });
   }
   return res.send({
@@ -33,7 +33,7 @@ router.get("/dev/compare", (req, res, next) => {
       valid: true,
       secretWord,
       guess,
-      colors: compareGuess(secretWord, guess),
+      colors: generateColorArr(secretWord, guess),
     });
   }
   return res.send({
@@ -55,15 +55,43 @@ router.get("/show", (req, res, next) => {
   });
 });
 
-const compareGuess = (secretWord, guess) =>
-  guess.split("").map((letter, idx) => {
-    if (secretWord.indexOf(letter) === idx) return "green";
-    if (
-      secretWord.indexOf(letter) >= 0 &&
-      guess[secretWord.indexOf(letter)] !== letter
-    )
-      return "yellow";
-    return "grey";
+function generateColorArr(secretWord, guess) {
+  const colorArr = ["grey", "grey", "grey", "grey", "grey"];
+  const guessLetterCount = {};
+  const secretLetterCount = getLetterCount(secretWord);
+
+  guess.split("").forEach((letter, idx) => {
+    // Define a guess letter count if it doesn't previously exist
+    if (!guessLetterCount[letter]) guessLetterCount[letter] = 0;
+
+    // Return if guess letter is not in secret word
+    if (!secretWord.includes(letter)) return;
+
+    //Generate Greens
+    if (letter === secretWord[idx]) {
+      colorArr[idx] = "green";
+      guessLetterCount[letter]++;
+      return;
+    }
+    // Generate Yellows
+    if (guessLetterCount[letter] < secretLetterCount[letter]) {
+      colorArr[idx] = "yellow";
+      guessLetterCount[letter]++;
+      return;
+    }
   });
+
+  return colorArr;
+}
+
+function getLetterCount(word) {
+  const count = {};
+  word
+    .split("")
+    .forEach((letter) =>
+      count[letter] ? count[letter]++ : (count[letter] = 1)
+    );
+  return count;
+}
 
 module.exports = router;
