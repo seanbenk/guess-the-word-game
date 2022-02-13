@@ -17,7 +17,7 @@ const removeLetter = () => {
 
 const updateRow = () => {
   const row = boardRows[0];
-  const boxes = row.querySelectorAll(".input-box");
+  const boxes = row.querySelectorAll(".tile");
   boxes.forEach((box, idx) => (box.textContent = guess[idx]));
 };
 
@@ -71,7 +71,7 @@ const compareWord = () => {
 
 const updateBoard = (colors) => {
   const row = boardRows[0];
-  const boxes = row.querySelectorAll(".input-box");
+  const boxes = row.querySelectorAll(".tile");
   boxes.forEach((box, idx) => {
     const guessCp = [...guess];
     setTimeout(() => {

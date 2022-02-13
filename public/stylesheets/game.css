@@ -26,7 +26,7 @@ h1 {
   display: flex;
 }
 
-.input-box {
+.tile {
   height: 3vw;
   width: 3vw;
   /* background-color: rgb(156, 156, 156); */
@@ -73,18 +73,30 @@ h1 {
 .grey {
   color: rgb(39, 38, 38);
   background-color: grey;
-  animation: forwards flip 1s;
+  transition: all 0.5s ease-in;
 }
 
 .yellow {
   color: rgb(39, 38, 38);
   background-color: gold;
-  animation: forwards flip 1s;
+  transition: all 0.5s ease-in;
 }
 
 .green {
   color: rgb(39, 38, 38);
   background-color: lime;
+  transition: all 0.5s ease-in;
+}
+
+.grey.tile {
+  animation: forwards flip 1s;
+}
+
+.yellow.tile {
+  animation: forwards flip 1s;
+}
+
+.green.tile {
   animation: forwards flip 1s;
 }
 
@@ -142,7 +154,7 @@ h1 {
     touch-action: manipulation;
     height: 92vh;
   }
-  .input-box {
+  .tile {
     min-height: 8vh;
     min-width: 14vw;
     font-size: 2.5rem;
