@@ -1,7 +1,7 @@
 let guess = [];
 let wordCode;
 let guessCount = 0;
-const baseUrl = "https://random-word-game-host.herokuapp.com/";
+const baseUrl = "https://guess-the-word-game.onrender.com/";
 
 // Helper Functions
 ////////////////////////////////////////////////////////////////
